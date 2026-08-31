@@ -75,7 +75,7 @@ function Rose() {
 
   return (
     <div className="rose-stage preserve-3d relative flex h-full w-full items-end justify-center pb-16">
-      <div className="rose-sway preserve-3d relative">
+      <div className="rose-sway preserve-3d relative scale-[1.35]">
         {/* stem */}
         <div className="relative mx-auto h-40 w-2.5 rounded-full bg-[linear-gradient(90deg,oklch(0.38_0.08_150),oklch(0.56_0.12_145),oklch(0.33_0.07_150))]">
           <div className="absolute left-2 top-12 h-7 w-20 rotate-[-16deg] rounded-[100%_0_100%_0] bg-[linear-gradient(120deg,oklch(0.55_0.13_145),oklch(0.36_0.09_150))]" />
@@ -83,7 +83,7 @@ function Rose() {
         </div>
 
         {/* sepals */}
-        <div className="absolute -top-6 left-1/2 h-10 w-16 -translate-x-1/2 rounded-[50%_50%_45%_45%] bg-[linear-gradient(180deg,oklch(0.46_0.11_148),oklch(0.33_0.08_150))]" />
+        <div className="absolute -top-3 left-1/2 h-7 w-11 -translate-x-1/2 rounded-[50%_50%_45%_45%] bg-[linear-gradient(180deg,oklch(0.46_0.11_148),oklch(0.33_0.08_150))]" />
 
         {/* bloom */}
         <div className="preserve-3d absolute -top-28 left-1/2 h-36 w-36 -translate-x-1/2">
