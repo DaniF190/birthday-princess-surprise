@@ -188,7 +188,7 @@ function Index() {
             </div>
 
             {/* Right half: second page */}
-            <div className="paper relative h-[520px] w-1/2 rounded-r-[0.9rem] border border-[oklch(0.85_0.07_80)]">
+            <div className="paper relative h-[520px] w-1/2 translate-z-[-4px] rounded-r-[0.9rem] border border-[oklch(0.85_0.07_80)]">
 
               <div className="pointer-events-none absolute inset-3 rounded-[0.4rem] border border-[oklch(0.8_0.1_85/0.6)]" />
               <div className="page-reveal flex h-full flex-col justify-between px-9 py-10 text-center text-[var(--card-foreground)]">
