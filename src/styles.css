@@ -136,11 +136,11 @@
 
 /* ---------- Card mechanics ---------- */
 .card-shell {
-  transform: rotateX(8deg) rotateZ(-1deg);
+  transform: rotateX(8deg) rotateZ(-1deg) translateX(-25%);
   transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .card-shell.is-open {
-  transform: rotateX(6deg) translateX(-8%) rotateZ(0deg);
+  transform: rotateX(6deg) translateX(0%) rotateZ(0deg);
 }
 
 .card-cover {
@@ -149,7 +149,7 @@
   transform: rotateY(0deg);
 }
 .card-shell.is-open .card-cover {
-  transform: rotateY(-165deg);
+  transform: rotateY(-177deg);
 }
 
 .face {
