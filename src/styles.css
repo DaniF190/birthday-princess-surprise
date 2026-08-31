@@ -65,9 +65,9 @@
   --gradient-gold: linear-gradient(
     100deg,
     var(--gold-deep) 0%,
-    var(--gold) 35%,
-    oklch(0.97 0.06 95) 50%,
-    var(--gold) 65%,
+    var(--gold) 40%,
+    oklch(0.88 0.12 90) 50%,
+    var(--gold) 60%,
     var(--gold-deep) 100%
   );
   --gradient-paper: linear-gradient(150deg, oklch(0.995 0.008 80), oklch(0.95 0.02 60));
