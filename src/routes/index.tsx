@@ -154,10 +154,10 @@ function Index() {
 
       <div className="scene relative w-full max-w-4xl">
         <div className={`card-shell preserve-3d relative mx-auto ${open ? "is-open" : ""}`}>
-          <div className="preserve-3d relative mx-auto flex w-full max-w-[820px] justify-center">
-            {/* Left half: the flipping cover */}
+          <div className="preserve-3d relative mx-auto flex w-full max-w-[760px] justify-end">
+            {/* Spine-left area (empty when closed) */}
             <div className="preserve-3d relative h-[520px] w-1/2">
-              <div className="card-cover preserve-3d absolute inset-0">
+              <div className="card-cover preserve-3d absolute inset-0 left-full">
                 {/* Cover page */}
                 <div className="face paper flex flex-col items-center justify-center gap-6 border border-[oklch(0.85_0.07_80)] px-8 text-center">
                   <div className="pointer-events-none absolute inset-3 rounded-[0.4rem] border border-[oklch(0.8_0.1_85/0.6)]" />
@@ -189,6 +189,7 @@ function Index() {
 
             {/* Right half: second page */}
             <div className="paper relative h-[520px] w-1/2 rounded-r-[0.9rem] border border-[oklch(0.85_0.07_80)]">
+
               <div className="pointer-events-none absolute inset-3 rounded-[0.4rem] border border-[oklch(0.8_0.1_85/0.6)]" />
               <div className="page-reveal flex h-full flex-col justify-between px-9 py-10 text-center text-[var(--card-foreground)]">
                 <GoldFlourish />
