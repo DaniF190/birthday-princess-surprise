@@ -66,48 +66,54 @@ function Tiara() {
 
 function Rose() {
   const rings = [
-    { count: 8, size: 108, radius: 44, tilt: 62, z: 0, opacity: 1 },
-    { count: 7, size: 88, radius: 32, tilt: 48, z: 14, opacity: 1 },
-    { count: 6, size: 66, radius: 21, tilt: 34, z: 26, opacity: 1 },
-    { count: 5, size: 46, radius: 12, tilt: 20, z: 36, opacity: 1 },
+    { count: 9, size: 92, radius: 26, tilt: 78, z: -14, shade: 0.86 },
+    { count: 8, size: 76, radius: 20, tilt: 62, z: -2, shade: 0.94 },
+    { count: 7, size: 60, radius: 15, tilt: 46, z: 10, shade: 1 },
+    { count: 6, size: 44, radius: 10, tilt: 30, z: 20, shade: 1.06 },
+    { count: 4, size: 30, radius: 5, tilt: 16, z: 28, shade: 1.12 },
   ];
 
   return (
-    <div className="rose-stage preserve-3d relative flex h-full w-full items-end justify-center pb-10">
+    <div className="rose-stage preserve-3d relative flex h-full w-full items-end justify-center pb-16">
       <div className="rose-sway preserve-3d relative">
         {/* stem */}
-        <div className="relative mx-auto h-44 w-3 rounded-full bg-[linear-gradient(90deg,oklch(0.42_0.09_150),oklch(0.58_0.12_145),oklch(0.36_0.08_150))]">
-          <div className="absolute left-3 top-10 h-8 w-20 rotate-[-18deg] rounded-[100%_0_100%_0] bg-[linear-gradient(120deg,oklch(0.55_0.13_145),oklch(0.38_0.09_150))]" />
-          <div className="absolute right-3 top-24 h-8 w-20 rotate-[18deg] rounded-[0_100%_0_100%] bg-[linear-gradient(240deg,oklch(0.55_0.13_145),oklch(0.38_0.09_150))]" />
+        <div className="relative mx-auto h-40 w-2.5 rounded-full bg-[linear-gradient(90deg,oklch(0.38_0.08_150),oklch(0.56_0.12_145),oklch(0.33_0.07_150))]">
+          <div className="absolute left-2 top-12 h-7 w-20 rotate-[-16deg] rounded-[100%_0_100%_0] bg-[linear-gradient(120deg,oklch(0.55_0.13_145),oklch(0.36_0.09_150))]" />
+          <div className="absolute right-2 top-24 h-7 w-20 rotate-[16deg] rounded-[0_100%_0_100%] bg-[linear-gradient(240deg,oklch(0.55_0.13_145),oklch(0.36_0.09_150))]" />
         </div>
 
+        {/* sepals */}
+        <div className="absolute -top-6 left-1/2 h-10 w-16 -translate-x-1/2 rounded-[50%_50%_45%_45%] bg-[linear-gradient(180deg,oklch(0.46_0.11_148),oklch(0.33_0.08_150))]" />
+
         {/* bloom */}
-        <div className="preserve-3d absolute -top-24 left-1/2 h-40 w-40 -translate-x-1/2">
+        <div className="preserve-3d absolute -top-28 left-1/2 h-36 w-36 -translate-x-1/2">
           {rings.map((ring, ri) =>
             Array.from({ length: ring.count }).map((_, i) => {
-              const angle = (360 / ring.count) * i + ri * 14;
+              const angle = (360 / ring.count) * i + ri * 21;
               return (
                 <span
                   key={`${ri}-${i}`}
                   className="petal"
                   style={{
                     width: ring.size,
-                    height: ring.size * 1.1,
+                    height: ring.size * 1.05,
                     marginLeft: -ring.size / 2,
-                    marginTop: -ring.size * 0.62,
-                    transform: `rotateZ(${angle}deg) translateY(-${ring.radius}px) translateZ(${ring.z}px) rotateX(${ring.tilt}deg)`,
+                    marginTop: -ring.size * 0.55,
+                    filter: `brightness(${ring.shade})`,
+                    transform: `translateZ(${ring.z}px) rotateZ(${angle}deg) rotateX(${ring.tilt}deg) translateY(-${ring.radius}px) rotateY(${ri % 2 ? 6 : -6}deg)`,
                   }}
                 />
               );
             }),
           )}
-          <span className="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,oklch(0.55_0.17_18),oklch(0.34_0.13_18))]" />
+          <span className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,oklch(0.5_0.16_18),oklch(0.31_0.12_18))]" />
         </div>
       </div>
-      <div className="absolute bottom-6 h-4 w-48 rounded-[100%] bg-[oklch(0.4_0.06_20/0.25)] blur-md" />
+      <div className="absolute bottom-10 h-4 w-44 rounded-[100%] bg-[oklch(0.4_0.06_20/0.22)] blur-md" />
     </div>
   );
 }
+
 
 function GoldFlourish({ flip = false }: { flip?: boolean }) {
   return (
