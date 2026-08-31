@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
 // ✏️ Change these two lines to personalise the card.
-const HER_NAME = "Anna";
-const SIGNATURE = "With all my love";
+const HER_NAME = "Marietta";
+const SIGNATURE = "Sok szeretettel";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -163,7 +163,7 @@ function Index() {
         <div className={`card-shell preserve-3d relative mx-auto ${open ? "is-open" : ""}`}>
           <div className="preserve-3d relative mx-auto flex w-full max-w-[760px] justify-end">
             {/* Right half: second page (sits under the cover when closed) */}
-            <div className="paper relative h-[520px] w-1/2 rounded-r-[0.9rem] border border-[oklch(0.85_0.07_80)]">
+            <div className="paper relative h-[520px] w-1/2 rounded-r-[0.9rem] border border-[oklch(0.85_0.07_80)]" onClick={() => setOpen((v) => !v)}>
               <div className="pointer-events-none absolute inset-3 rounded-[0.4rem] border border-[oklch(0.8_0.1_85/0.6)]" />
               <div
                 className={`page-reveal flex h-full flex-col justify-between px-9 py-10 text-center text-[var(--card-foreground)] ${
@@ -172,9 +172,11 @@ function Index() {
               >
                 <GoldFlourish />
                 <div className="flex flex-col gap-4 font-display text-lg leading-relaxed">
-                  <p>Write your first line here.</p>
-                  <p>And another sweet paragraph here.</p>
+                  <p>Szeretnék nagyon boldog születésnapot kívánni ezzel a kis aprósággal.</p>
+                  <p>Szeretném hogy tudd, mennyire fontos vagy nekem.</p>
+                  <p>Egy nagyon jó ember vagy és nagyon örülök hogy megismerhettelek.</p>
                   <p className="font-script text-3xl text-[var(--rose-deep)]">{SIGNATURE}</p>
+                  <p className="font-script text-3xl text-[var(--rose-deep)]">Dani</p>
                 </div>
                 <GoldFlourish flip />
               </div>
@@ -183,29 +185,23 @@ function Index() {
             {/* The flipping cover, hinged on the spine */}
             <div className="card-cover preserve-3d absolute right-0 top-0 h-[520px] w-1/2">
               {/* Cover page */}
-              <div className="face paper flex flex-col items-center justify-center gap-6 border border-[oklch(0.85_0.07_80)] px-8 text-center">
+              <div className="face paper flex flex-col items-center justify-center gap-6 border border-[oklch(0.85_0.07_80)] px-8 text-center" onClick={() => setOpen((v) => !v)}>
                 <div className="pointer-events-none absolute inset-3 rounded-[0.4rem] border border-[oklch(0.8_0.1_85/0.6)]" />
                 <Tiara />
                 <p className="font-display text-sm uppercase tracking-[0.45em] text-[var(--gold-deep)]">
                   Happy Birthday
                 </p>
                 <p className="font-script text-5xl leading-tight text-gold-shine">Princess {HER_NAME}</p>
-                <button
-                  onClick={() => setOpen(true)}
-                  className="mt-2 rounded-full border border-[var(--gold-deep)] px-5 py-2 font-display text-xs uppercase tracking-[0.3em] text-[var(--gold-deep)] transition-colors hover:bg-[oklch(0.9_0.08_88/0.5)]"
-                >
-                  Open the card
-                </button>
               </div>
 
               {/* First page (back of the cover) — the pop-up rose */}
-              <div className="face face-back paper border border-[oklch(0.85_0.07_80)]">
+              <div className="face face-back paper border border-[oklch(0.85_0.07_80)]" onClick={() => setOpen((v) => !v)}>
                 <div className="pointer-events-none absolute inset-3 rounded-[0.4rem] border border-[oklch(0.8_0.1_85/0.6)]" />
                 <div className="preserve-3d absolute inset-0 pt-6">
                   <Rose />
                 </div>
                 <p className="page-reveal absolute bottom-6 w-full text-center font-script text-2xl text-[var(--rose-deep)]">
-                  just for you
+                  Szép virág egy szép virágnak
                 </p>
               </div>
             </div>
@@ -213,13 +209,6 @@ function Index() {
 
         </div>
       </div>
-
-      <button
-        onClick={() => setOpen((v) => !v)}
-        className="relative mt-12 rounded-full border border-[var(--gold)] px-6 py-2 font-display text-xs uppercase tracking-[0.35em] text-[var(--gold)] transition-colors hover:bg-[oklch(0.84_0.12_87/0.15)]"
-      >
-        {open ? "Close the card" : "Open the card"}
-      </button>
     </main>
   );
 }
